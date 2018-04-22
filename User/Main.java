@@ -14,6 +14,9 @@ public class Main {
     static JPanel jPanel = new JPanel();
     static JFrame welcome;
     static WelcomeListener wl = new WelcomeListener();
+    static Connection c = new Connection();
+    static Login login = new Login();
+
     public static void main(String[] args) {
         welcome = new JFrame("Swing ist scheiße javafx ist besser");
         welcome.setBounds(100,100,500,500);

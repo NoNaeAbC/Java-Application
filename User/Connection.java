@@ -7,4 +7,7 @@ public class Connection {
     boolean vrfy(String passHash,String pass){
         return false;
     }
+    boolean newUser(String User, String Pass, String pk){
+        return true;
+    }
 }
