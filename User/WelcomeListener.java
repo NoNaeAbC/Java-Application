@@ -47,7 +47,8 @@ public class WelcomeListener implements KeyListener,MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if(((JButton)e.getSource()).getText().equals("Log in")){
-
+            Main.login.setVisible();
+            Main.welcome.setVisible(false);
         }else{
             Main.welcome.setVisible(false);
             Sign_in s = new Sign_in();

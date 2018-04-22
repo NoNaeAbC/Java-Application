@@ -8,8 +8,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyPair;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 
 public class Sign_in extends JFrame implements KeyListener,MouseListener {
     TextField textField = new TextField();
@@ -59,30 +61,9 @@ public class Sign_in extends JFrame implements KeyListener,MouseListener {
         if(((JButton)e.getSource()).getText().equals("OK")){
             String name = textField.getText().replace(':','_');
             String pass = new String(passwordField.getPassword());
-            byte[] b = new byte[16];
-            for (int i = 0; i<16; i++){
-                try {
-                    b[i] = pass.getBytes()[i];
-                }catch (ArrayIndexOutOfBoundsException e1 ){
 
-                } finally{
-                    b[i] = 0;
-                }
-            }
-            pass=new String(b);
             String key = pass;
             String iv = name;
-            b = new byte[16];
-            for (int i = 0; i<16; i++){
-                try {
-                    b[i] = name.getBytes()[i];
-                }catch (ArrayIndexOutOfBoundsException e1 ){
-
-                } finally{
-                    b[i] = 0;
-                }
-            }
-            iv=new String(b);
             pass = Crypto_.sha512(pass);
             if(Main.c.newUser(name,pass,"")){
                 Main.login.addUser(name,pass,Crypto_.encrypt(key,iv,""),"");

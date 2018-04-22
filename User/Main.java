@@ -16,6 +16,7 @@ public class Main {
     static WelcomeListener wl = new WelcomeListener();
     static Connection c = new Connection();
     static Login login = new Login();
+    static Send s = new Send();
 
     public static void main(String[] args) {
         welcome = new JFrame("Swing ist scheiße javafx ist besser");

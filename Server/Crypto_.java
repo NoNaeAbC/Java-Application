@@ -1,4 +1,4 @@
-package User;
+package Server;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -7,9 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.util.Base64;
 
-/**
- * Actually, this class should be in its own package
- */
 public class Crypto_ {
     public static String sha512(String pass){
         String generatedPassword = null;
